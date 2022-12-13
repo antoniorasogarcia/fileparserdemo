@@ -11,11 +11,6 @@ import org.jeasy.rules.core.DefaultRulesEngine;
 import com.fileparser.util.FileLine;
 import com.fileparser.util.FileParserUtil;
 import com.fileparser.rules.RuleDateExpire;
-// import com.fileparser.rules.RuleDocumentNumber;
-// import com.fileparser.rules.RuleSamePerson;
-
-  
-//Constantes en un array para comprobar los países válidos
 
 public class App {
     static final String FILE_NAME = "textToParse.txt";
@@ -38,7 +33,7 @@ public class App {
             RulesEngine rulesEngine = new DefaultRulesEngine();
             rulesEngine.fire(getRules(), fact);
         }
-        ArrayList <String> errorLogList = FileLine.getErroList();
+        ArrayList <String> errorLogList = FileLine.getErrorList();
         System.out.println(errorLogList);
 
     }
@@ -51,13 +46,4 @@ public class App {
         rules.register(new RuleDateExpire());
         return rules;
     }
-
-    // public static Rules createRules() {
-    //     Rules rules = new Rules();
-    //     rules.register(new RuleDateExpire());
-    //     // rules.register(new RuleSamePerson());
-    //     // rules.register(new RuleDocumentNumber());
-    //     return rules;
-    // }
-
 }

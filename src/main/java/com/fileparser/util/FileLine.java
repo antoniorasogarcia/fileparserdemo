@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class FileLine {
-    //Pos 0 - Id //Pos 1 - P|ID|DL //Pos 2 - Pais //Pos 3 - Last Name //Pos 4 - First Name //Pos 5 - Number //Pos 6 - Nacionalidad //Pos 7 - Nacimiento //Pos 8 - Expiracion
 
     private String id;
     private String documentType;
@@ -24,6 +23,7 @@ public class FileLine {
     private String expireDate;
     private String nationality;
     public static  ArrayList <String> errorList;
+    public static  ArrayList <String> correctList;
 
     public FileLine(String data){
         String[] attributes = data.split(",");
@@ -39,7 +39,8 @@ public class FileLine {
         this.nationality = attributes[6];
         this.birthday = attributes[7];
         this.expireDate = attributes[8];
-        this.errorList = new ArrayList<String>();
+        FileLine.errorList = new ArrayList<String>();
+        FileLine.correctList = new ArrayList<String>();
     }
     public String getId() {
         return id;
@@ -53,11 +54,18 @@ public class FileLine {
         this.expireDate = expireDate;
     }
 
-    public static ArrayList<String> getErroList(){
+    public static ArrayList<String> getErrorList(){
         return errorList;
     }
 
-    public void setErroList(){
+    public void setErrorList(){
+        this.errorList = errorList;
+    }
+    public static ArrayList<String> getCorrectList(){
+        return errorList;
+    }
+
+    public void setCorrectList(){
         this.errorList = errorList;
     }
 }
