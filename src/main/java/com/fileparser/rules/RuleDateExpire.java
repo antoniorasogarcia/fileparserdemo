@@ -2,7 +2,6 @@ package com.fileparser.rules;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 
 import org.jeasy.rules.annotation.Action;
 import org.jeasy.rules.annotation.Condition;
@@ -24,6 +23,6 @@ public class RuleDateExpire {
  
     @Action
     public void deniedAccess(@Fact("person") FileLine expiryDate) {
-        expiryDate.errorList.add(expiryDate.getId() + ", expired");
+        FileLine.errorList.add(expiryDate.getId() + ", expired \n");
     }
 }

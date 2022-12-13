@@ -23,7 +23,7 @@ public class FileLine {
     private String birthday;
     private String expireDate;
     private String nationality;
-    public  ArrayList <String> errorList;
+    public static  ArrayList <String> errorList;
 
     public FileLine(String data){
         String[] attributes = data.split(",");
@@ -39,6 +39,7 @@ public class FileLine {
         this.nationality = attributes[6];
         this.birthday = attributes[7];
         this.expireDate = attributes[8];
+        this.errorList = new ArrayList<String>();
     }
     public String getId() {
         return id;
@@ -50,5 +51,13 @@ public class FileLine {
 
     public void setExpireDate() {
         this.expireDate = expireDate;
+    }
+
+    public static ArrayList<String> getErroList(){
+        return errorList;
+    }
+
+    public void setErroList(){
+        this.errorList = errorList;
     }
 }

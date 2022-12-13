@@ -1,5 +1,6 @@
 package com.fileparser;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.jeasy.rules.api.Facts;
@@ -37,6 +38,8 @@ public class App {
             RulesEngine rulesEngine = new DefaultRulesEngine();
             rulesEngine.fire(getRules(), fact);
         }
+        ArrayList <String> errorLogList = FileLine.getErroList();
+        System.out.println(errorLogList);
 
     }
     private URL getResourceURL(){
